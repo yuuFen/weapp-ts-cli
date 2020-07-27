@@ -1,0 +1,27 @@
+{
+  "name": "weapp-ts-cli",
+  "version": "0.1.0",
+  "description": "Create a weapp project with typescript ",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yuuFen/weapp-ts-cli.git"
+  },
+  "keywords": [
+    "wx",
+    "weapp",
+    "wechat",
+    "cli",
+    "ts",
+    "typescript"
+  ],
+  "author": "YuuFen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuuFen/weapp-ts-cli/issues"
+  },
+  "homepage": "https://github.com/yuuFen/weapp-ts-cli"
+}
