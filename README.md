@@ -2,11 +2,17 @@
 
 ## USE
 
-已实现：
 ```
 wets --help
+
 wets init <project-name>
+
 wets app-page <page-name>
+
+wets app-component
+? 设置 component 的名字 (例如: comp): comp
+? 设置组件所属的作用域: page
+? 设置组件所属的页面: demo
 ```
 
 ## TODO

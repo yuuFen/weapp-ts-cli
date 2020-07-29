@@ -36,7 +36,7 @@ const question = [
   {
     type: 'list',
     name: 'scope',
-    message: '设置组件所属的作用域',
+    message: '设置组件所属的作用域:',
     choices: ['global', 'page'],
   },
 
@@ -44,7 +44,7 @@ const question = [
   {
     type: 'list',
     name: 'parentPage',
-    message: '设置组件所属的页面',
+    message: '设置组件所属的页面:',
     choices() {
       return [...Object.keys(pagesList)];
     },
