@@ -14,6 +14,7 @@ wets app-page <page-name>
 - [ ] 通用工具
   - [x] Log
   - [x] 文件操作
+  - [x] 获取 app.json
 
 
 - [x] 快速创建启动模版功能: init
@@ -27,12 +28,12 @@ wets app-page <page-name>
   - [x] copy到项目中
   - [x] 修改app.json
   - [ ] 分包  
-- [ ] 快速创建 ts 组件: add-component
-  - [ ] 设置组件名
-  - [ ] 设置是全局组件 or 页面组件
-  - [ ] 找到已有模版文件
-  - [ ] copy到项目中
-  - [ ] 修改 json
+- [x] 快速创建 ts 组件: add-component
+  - [x] 设置组件名
+  - [x] 设置是全局组件 or 页面组件
+  - [x] 找到已有模版文件
+  - [x] copy到指定目录
+  - [x] 修改 json
   - [ ] 分包  
 - [ ] dev
 - [ ] watch

@@ -2,9 +2,9 @@ const fs = require('fs'); // 文件读取模块
 const path = require('path'); // 路径模块
 const jsonFormat = require('json-format'); // json格式化（用来美化文件输出格式）
 const Log = require('../lib/log.js'); // 控制台输出
-const Util = require('../lib/utils.js'); // 工具函数
+const Utils = require('../lib/utils.js'); // 工具函数
 
-let Config = require('../config'); // 获取配置项
+const Config = require('../config'); // 获取配置项
 
 // 校验文件名称
 const regEn = /[`~!@#$%^&*()+<>?:"{},.\/;'[\]]/im;
@@ -36,13 +36,13 @@ module.exports = async function createPage(name, options) {
   }
 
   // 创建文件夹
-  await Util.createDir(pagePath);
+  await Utils.createDir(pagePath);
 
   // 获取文件列表
-  const files = await Util.readDir(tempPath);
+  const files = await Utils.readDir(tempPath);
 
   // 复制文件
-  await Util.copyFilesArr(tempPath, `${pagePath}/${name}`, files);
+  await Utils.copyFilesArr(tempPath, `${pagePath}/${name}`, files);
 
   // 填充app.json
   await writePageAppJson(name);
@@ -58,24 +58,22 @@ function writePageAppJson(name, modulePath = '') {
   return new Promise((resolve, reject) => {
     // 根据命令执行路径获取 app.json
     // TODO 容错
-    const appJsonPath = path.resolve(process.cwd(), Config.entry, 'app.json');
-    let appJson;
-    try {
-      appJson = require(appJsonPath);
-    } catch (e) {
-      Log.error(`未找到app.json, 请检查当前文件目录是否正确，并手动添加 ${appJsonPath}`);
-      process.exit(1);
-    }
+    const appJson = Utils.getAppJson();
 
-    // 填充主包
-    if (!modulePath) {
-      appJson.pages.push(`pages/${name}/${name}`);
+    try {
+      // 填充主包
+      if (!modulePath) {
+        appJson.pages.push(`pages/${name}/${name}`);
+      }
+    } catch (e) {
+      Log.error(`app.json 格式错误`);
+      process.exit(1);
     }
 
     // 写入文件
     fs.writeFile(`${Config.entry}/app.json`, jsonFormat(appJson), (err) => {
       if (err) {
-        Log.error('自动写入app.json文件失败，请手动填写，并检查错误');
+        Log.error('自动写入app.json文件失败，请手动填写');
         reject();
       } else {
         resolve();

@@ -1,7 +1,19 @@
 const fs = require('fs'); // 文件读取模块
 const path = require('path'); // 路径模块
+const Config = require('../config');
 
 module.exports = {
+  // 获取 app.json
+  getAppJson() {
+    const appJsonPath = path.resolve(process.cwd(), Config.entry, 'app.json');
+    try {
+      return require(appJsonPath);
+    } catch (e) {
+      Log.error(`未找到 app.json, 请检查当前文件目录是否正确，并手动添加 ${appJsonPath}`);
+      process.exit(1);
+    }
+  },
+
   // 查看文件/文件夹是否存在
   checkFileIsExists(path) {
     return fs.existsSync(path);

@@ -38,7 +38,7 @@ program
 
 // 快速生成模版 组件
 program
-  .command('add-component <component-name>')
+  .command('add-component')
   .option('-f,--force', 'overwrite current directory')
   .description('创建组件')
   .action(addComponent);
