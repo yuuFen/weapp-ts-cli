@@ -1,4 +1,5 @@
 // 获取应用实例
+import { IAppOption } from '../../app';
 const app = getApp<IAppOption>();
 
 Page({
@@ -37,6 +38,6 @@ Page({
    * 页面卸载
    */
   onUnload() {
-      
+    
   },
 });

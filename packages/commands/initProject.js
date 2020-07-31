@@ -30,9 +30,9 @@ module.exports = async function initProject(cmd, options) {
       fs.remove(path.resolve(projectName, './.git'));
     }
     
-    shell.cd(projectName);
-    Log.success('开始安装依赖，大约需要 2-5 分钟');
-    shell.exec('npm i');
+    // shell.cd(projectName);
+    // Log.success('开始安装依赖，大约需要 5-15 分钟');
+    // shell.exec('npm i');
 
     Log.success(`项目 ${projectName} 初始化成功`);
   });

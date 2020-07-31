@@ -7,12 +7,20 @@ wets --help
 
 wets init <project-name>
 
+cd 项目目录
+
+yarn / npm install
+
 wets app-page <page-name>
 
 wets app-component
 ? 设置 component 的名字 (例如: comp): comp
 ? 设置组件所属的作用域: page
 ? 设置组件所属的页面: demo
+
+yarn watch / npm run watch
+yarn dev / npm run dev
+yarn build / npm run build
 ```
 
 ## TODO
@@ -23,7 +31,7 @@ wets app-component
   - [x] 获取 app.json
 
 
-- [x] 快速创建启动模版功能: init
+- [x] 快速创建启动模版: init
   - [x] http 下载模板
   - [x] 设置项目名称
   - [ ] 修改 package.json
@@ -49,3 +57,4 @@ wets app-component
 
 
 - [ ] 兜底
+
