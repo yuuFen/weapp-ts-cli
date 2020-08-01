@@ -1,5 +1,7 @@
 # Weapp TypeScript CLI
 
+实例项目：https://github.com/yuuFen/zjgsu-map
+
 ## INSTALL
 
 ```

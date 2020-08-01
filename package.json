@@ -1,6 +1,6 @@
 {
   "name": "weapp-ts-cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Create a weapp project with typescript ",
   "main": "bin/index.js",
   "bin": {
