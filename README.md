@@ -1,27 +1,66 @@
 # Weapp TypeScript CLI
 
+## INSTALL
+
+```
+npm install -g weapp-ts-cli
+```
+
 ## USE
 
 ```
 wets --help
+```
 
+**创建项目**
+
+```
 wets init <project-name>
-
 cd 项目目录
+```
 
-yarn / npm install
+**安装依赖**
 
+```
+yarn
+```
+or `npm install`
+
+**创建 page**
+
+```
 wets app-page <page-name>
+```
 
+**创建 component**
+
+```
 wets app-component
 ? 设置 component 的名字 (例如: comp): comp
 ? 设置组件所属的作用域: page
 ? 设置组件所属的页面: demo
-
-yarn watch / npm run watch
-yarn dev / npm run dev
-yarn build / npm run build
 ```
+
+**监听更新**
+
+```
+yarn watch
+```
+or `npm run watch`
+
+**编译开发版本**
+
+```
+yarn dev
+```
+or `npm run dev`
+
+**编译生产版本**
+
+```
+yarn build
+```
+or `npm run build`
 
 ## TODO
 
@@ -57,4 +96,3 @@ yarn build / npm run build
 
 
 - [ ] 兜底
-
