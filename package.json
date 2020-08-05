@@ -1,6 +1,6 @@
 {
   "name": "weapp-ts-cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Create a weapp project with typescript ",
   "main": "bin/index.js",
   "bin": {
@@ -17,7 +17,8 @@
     "wechat",
     "cli",
     "ts",
-    "typescript"
+    "typescript",
+    "wets"
   ],
   "author": "YuuFen",
   "license": "MIT",

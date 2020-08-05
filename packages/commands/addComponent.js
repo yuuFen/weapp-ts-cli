@@ -69,17 +69,25 @@ function getPathSubSting(path) {
 /**
  * @description 创建 component
  */
-module.exports = async function addComponent() {
+module.exports = async function addComponent(name) {
   const appJson = Utils.getAppJson();
-  appJson.pages.forEach((path) => (pagesList[getPathSubSting(path)] = path));
+  try {
+    appJson.pages.forEach((path) => (pagesList[getPathSubSting(path)] = path));
+  } catch (error) {
+    Log.error(`app.json 格式错误`);
+  }
   // 问题执行
-  inquirer.prompt(question).then((answers) => {
-    // const { name, scope, parentPage } = answers;
-    createComponent(answers);
-  });
+  if (!name) {
+    inquirer.prompt(question).then((answers) => {
+      // const { name, scope, parentPage } = answers;
+      createComponent(answers);
+    });
+  } else {
+    createComponent({ name });
+  }
 };
 
-async function createComponent({ name, scope, parentPage }) {
+async function createComponent({ name, scope = 'global', parentPage }) {
   // 模版文件路径
   const tempPath = path.join(Config.template, '/component');
 
@@ -110,8 +118,7 @@ async function createComponent({ name, scope, parentPage }) {
   await Utils.copyFilesArr(tempPath, `${compPath}/${name}`, files);
 
   // 填充 app.json
-  scope === 'page' &&
-    (await writeComponentPageJson(name, parentPage, path.join(Config.entry, pagesList[parentPage], '../')));
+  scope === 'page' && (await writeComponentPageJson(name, parentPage, path.join(Config.entry, pagesList[parentPage], '../')));
 
   // 成功提示
   Log.success(`创建 component - ${compPath} 成功`);

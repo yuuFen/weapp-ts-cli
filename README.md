@@ -15,11 +15,11 @@ wets --help
 ```
 
 **创建项目**
-
 ```
 wets init <project-name>
 cd 项目目录
 ```
+> 请将整个项目导入小程序开发工具
 
 **安装依赖**
 
@@ -36,6 +36,12 @@ wets app-page <page-name>
 
 **创建 component**
 
+创建全局组件：
+```
+wets app-component [component-name]
+```
+
+或进行配置：
 ```
 wets app-component
 ? 设置 component 的名字 (例如: comp): comp
@@ -90,9 +96,7 @@ or `npm run build`
   - [x] copy到指定目录
   - [x] 修改 json
   - [ ] 分包  
-- [ ] dev
-- [ ] watch
-- [ ] build
+- [ ] 整合 gulp？
 - [ ] 设置版本号，版本描述功能
 - [ ] 发布体验版
 

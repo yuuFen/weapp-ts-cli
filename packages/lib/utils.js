@@ -1,5 +1,6 @@
 const fs = require('fs'); // 文件读取模块
 const path = require('path'); // 路径模块
+const Log = require('./log');
 const Config = require('../config');
 
 module.exports = {
